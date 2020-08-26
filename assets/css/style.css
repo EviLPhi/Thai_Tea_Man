@@ -1,0 +1,14 @@
+.login {
+	background: url('../img/login.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	height: 92vh;
+	overflow: hidden;
+}
+.footer {
+    padding: 20px;
+    color: white;
+    background-color: #00a2c6;
+    text-align: center;
+    font-weight: bold;
+ }
