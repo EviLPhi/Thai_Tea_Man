@@ -14,6 +14,16 @@
 <body>
 	<!-- Pesan dari proses login -->
 	<?php 
+	session_start();
+	if(isset($_SESSION['jabatan'])){
+		if ($_SESSION['jabatan'] == 'kasir') {
+			header('Location:./petugas/index.php');
+		}
+		elseif($_SESSION['jabatan'] == 'admin'){
+			header('Location: ./admin/index.php');
+		}
+	}
+
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan'] == "gagal"){
 			echo '<script language="javascript">alert("Login gagal! username dan password salah!")</script>';

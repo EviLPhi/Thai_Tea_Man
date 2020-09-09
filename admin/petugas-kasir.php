@@ -5,6 +5,10 @@ require_once '../config/db.php';
 if (!isset($_SESSION['user'])) {
 	header('Location: ../index.php?pesan=belum_login');
 }
+if ($_SESSION['jabatan'] == 'kasir') {
+	header('Location: ../petugas/index.php');
+}
+
 
 // Mengelurkan seluruh data barang yang ada di Databae
 $sql 			= "SELECT * FROM tb_users WHERE jabatan = 'kasir'";

@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 require_once '../config/db.php';
 
 $nama 		= $_POST['nama'];
@@ -21,6 +20,7 @@ if ($query->num_rows > 0) {
 	
 	$_SESSION['user'] = $result['nama'];
 	$_SESSION['id_user'] = $result['id'];
+	$_SESSION['jabatan'] = $result['jabatan'];
 	
 	if ($result['jabatan'] == 'admin') {
 		header('Location: ../admin/index.php');
