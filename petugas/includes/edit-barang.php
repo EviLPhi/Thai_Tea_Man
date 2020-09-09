@@ -3,7 +3,7 @@
 	<h2>Edit Data Menu </h2>
 	<hr>
 	
-	<a href="data-barang.php" class="btn btn-primary btn-sm float-left">&larr; Kembali</a>
+	<a href="data-barang.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
 	<div class="clearfix"></div>
 	
 	<?php 

@@ -12,6 +12,18 @@
 </head>
  
 <body>
+	<!-- Pesan dari proses login -->
+	<?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan'] == "gagal"){
+			echo '<script language="javascript">alert("Login gagal! username dan password salah!")</script>';
+		}else if($_GET['pesan'] == "logout"){
+			echo '<script language="javascript">alert("Anda telah berhasil logout")</script>';
+		}else if($_GET['pesan'] == "belum_login"){
+			echo '<script language="javascript">alert("Anda harus login")</script>';
+		}
+	}
+	?>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -19,7 +31,7 @@
     <!-- Icon -->
     <div class="fadeIn first">
       <img src="assets\img\logo.png" id="icon" alt="User Icon" />
-    </div>
+	</div>
 
     <!-- Login Form -->
     <form action="proses/login-proses.php" method="POST" autocomplete="off">

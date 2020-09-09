@@ -3,7 +3,7 @@
 	<h2>Edit Data</h2>
 	<hr>
 	
-	<a href="petugas-kasir.php" class="btn btn-primary btn-sm float-left">&larr; Kembali</a>
+	<a href="petugas-kasir.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
 	<div class="clearfix"></div>
 
 	<?php 

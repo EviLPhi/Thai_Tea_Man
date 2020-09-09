@@ -3,7 +3,7 @@
 	<h2>Tambah Data Petugas</h2>
 	<hr>
 	
-	<a href="petugas-kasir.php" class="btn btn-primary btn-sm float-left">&larr; Kembali</a>
+	<a href="petugas-kasir.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
 	<div class="clearfix"></div>
 
 	<form action="proses/tambah_kasir.php" method="POST" class="mt-3" autocomplete="off">

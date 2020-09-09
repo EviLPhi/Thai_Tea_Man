@@ -17,7 +17,10 @@ if (!isset($nama, $password, $jabatan)) {
 $sql = "INSERT INTO `tb_users`(`id`, `nama`, `password`, `jabatan`) VALUES ('', '".$nama."', '".$password."', '".$jabatan."')";
 $query = $conn->query($sql);
 
+// $add = "ALTER TABLE tb_barang ADD 'stock_".$nama."' INT DEFAULT 0";
+
 if ($query) {
+	// $conn->query($add);
 	header('Location: ../petugas-kasir.php');
 } else {
 	header('Location: ../petugas-kasir.php?h=tambah');

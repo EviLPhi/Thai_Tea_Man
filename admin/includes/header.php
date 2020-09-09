@@ -15,7 +15,7 @@
 		</button>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand">
-		<img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="Thaitea">
+		<img src="..\assets\img\logo.png" width="50" height="50" alt="Thaitea">
 		Thai Tea Man
 		</a>
 		</nav>
