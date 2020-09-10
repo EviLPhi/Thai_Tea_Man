@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="shortcut icon" href="assets\img\favicon.ico">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Aplikasi Thai Tea Man </title>
@@ -36,11 +37,11 @@
 	?>
 <div class="wrapper fadeInDown">
   <div id="formContent">
+	  <br><br>
     <!-- Tabs Titles -->
-
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="assets\img\logo.png" id="icon" alt="User Icon" />
+      <img src="assets\img\Logo_Full.svg" id="icon" alt="User Icon" />
 	</div>
 
     <!-- Login Form -->

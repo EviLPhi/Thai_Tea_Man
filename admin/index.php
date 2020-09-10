@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="assets\img\favicon.ico">
 <?php
 
 session_start();

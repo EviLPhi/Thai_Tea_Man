@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="shortcut icon" href="..\assets\img\favicon.ico">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Petugas Cabang</title>
@@ -16,7 +17,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
  
 		<a class="navbar-brand">
-		<img src="..\assets\img\logo.png" width="50" height="50" alt="Thaitea">
+		<img src="..\assets\img\logo.png" width="80" height="60" alt="Thaitea">
 		Thai Tea Man
 		</a>
 		</nav>
