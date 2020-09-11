@@ -25,8 +25,8 @@
 				<td><?= $kasir['password'] ?></td>
 				<td>
 					<div class="d-inline">
-						<a href="?h=edit-kasir&id=<?= $kasir['id'] ?>" class="btn btn-success btn-sm">Edit</a>
-						<a href="?h=hapus-kasir&id=<?= $kasir['id'] ?>" onclick="return confirm('Yakin Hapus <?= $kasir['nama'] ?>?')" class="btn btn-danger btn-sm">Hapus</a>
+						<a href="?h=edit-kasir&id=<?= $kasir['id'] ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit    "></i></a>
+						<a href="?h=hapus-kasir&id=<?= $kasir['id'] ?>" onclick="return confirm('Yakin Hapus <?= $kasir['nama'] ?>?')" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt    "></i></a>
 					</div>
 				</td>
 			</tr>

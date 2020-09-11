@@ -66,7 +66,7 @@
 							<input type="number" name="jumlah_barang" placeholder="Jumlah menu Pesanan" min="1" max="1000" class="form-control" required>
 						</div>
 						<button type="submit" class="btn btn-primary float-right">Input Transaksi</button>
-						<a data-toggle="modal" data-target="#myModal" class="btn btn-danger float-left">Reset</a>
+						<a data-toggle="modal" data-target="#myModal" class="btn btn-danger float-left"><i class="fas fa-sync-alt    "></i></a>
 						<div class="clearfix"></div>
 					</form>
    					</div>

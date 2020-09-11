@@ -31,8 +31,8 @@
 				<td><?= $barang['harga'] ?></td>
 				<td>
 					<div class="d-inline" >
-						<a href="?h=edit-barang&id=<?= $barang['id'] ?>" class="btn btn-success btn-sm">Tambah</a>
-						<a href="?h=detail&id=<?= $barang['id'] ?>" class="btn btn-primary btn-sm">Detail</a>
+						<a href="?h=edit-barang&id=<?= $barang['id'] ?>" class="btn btn-success btn-sm"><i class="fa fa-plus" aria-hidden="true"></i></a>
+						<a href="?h=detail&id=<?= $barang['id'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-bars    "></i></a>
 					</div>
 				</td>
 				

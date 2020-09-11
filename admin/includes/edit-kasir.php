@@ -25,7 +25,7 @@
 			<input type="text" name="jabatan" value="<?= $data['jabatan'] ?>" class="form-control" required readonly>
 		</div> -->
 		<input type="hidden" name="id" value="<?= $data['id'] ?>">
-		<button type="submit" class="btn btn-primary float-right">Edit</button>
+		<button type="submit" class="btn btn-primary float-right">Simpan</button>
 	</form>
 
 </div>

@@ -1,5 +1,4 @@
 <div class="container mt-5">
-	
 	<h2>Stock  Menu</h2>
 	<hr>
 	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari..." title="Type in a name">
@@ -29,9 +28,9 @@
 				<td><?= $barang['harga'] ?></td>
 				<td>
 					<div class="d-inline">
-						<a href="?h=detail&id=<?= $barang['id'] ?>" class="btn btn-primary btn-sm">Detail</a>
-						<a href="?h=edit-barang&id=<?= $barang['id'] ?>" class="btn btn-success btn-sm">Edit</a>
-						<a href="?h=hapus&id=<?= $barang['id'] ?>" onclick="return confirm('Yakin Hapus <?= $barang['nama_barang'] ?>?')" class="btn btn-danger btn-sm">Hapus</a>
+						<a href="?h=detail&id=<?= $barang['id'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-bars"></i></a>
+						<a href="?h=edit-barang&id=<?= $barang['id'] ?>" class="btn btn-success btn-sm"><i class="fas fa-pen"></i></a>
+						<a href="?h=hapus&id=<?= $barang['id'] ?>" onclick="return confirm('Yakin Hapus <?= $barang['nama_barang'] ?>?')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
 					</div>
 				</td>
 			</tr>
