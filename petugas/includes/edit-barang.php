@@ -33,7 +33,7 @@
 					<input type="number" name="harga" value="<?= $data['harga'] ?>" min="1" max="10000" class="form-control" required readonly>
 				</div>
 				<input type="hidden" name="id" value="<?= $data['id'] ?>">
-				<button type="submit" class="btn btn-primary float-right">Simpan</button>
+				<button type="submit" class="btn btn-primary float-right"><i class="fas fa-save"></i> Simpan</button>
 				<div class="clearfix"></div>
 			</form>
 		</div>

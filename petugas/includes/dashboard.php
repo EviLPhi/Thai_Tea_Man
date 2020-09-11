@@ -65,7 +65,7 @@
 							<label for="jumlah_barang">Jumlah Menu</label>
 							<input type="number" name="jumlah_barang" placeholder="Jumlah menu Pesanan" min="1" max="1000" class="form-control" required>
 						</div>
-						<button type="submit" class="btn btn-primary float-right">Input Transaksi</button>
+						<button type="submit" class="btn btn-primary float-right"><i class="fas fa-cart-plus    "></i> Transaksi</button>
 						<a data-toggle="modal" data-target="#myModal" class="btn btn-danger float-left"><i class="fas fa-sync-alt    "></i></a>
 						<div class="clearfix"></div>
 					</form>
@@ -150,7 +150,7 @@
 					<h3 class="float-right">Total : Rp. <?= number_format(array_sum($_SESSION['total_bayar'])) ?></h3>
 					<div class="clearfix"></div>
 					
-					<a href="data-barang.php" class="btn btn-success btn-block">SUBMIT</a>
+					<a href="data-barang.php" class="btn btn-success btn-block">Submit</a>
 					
 				   
 					

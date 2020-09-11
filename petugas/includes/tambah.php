@@ -27,7 +27,7 @@
 			<label for="harga">Harga Menu</label>
 			<input type="number" name="harga" placeholder="Harga Menu" class="form-control" required>
 		</div>
-		<button type="submit" class="btn btn-primary float-right">Tambah Menu</button>
+		<button type="submit" class="btn btn-primary float-right"><i class="fas fa-save"></i> Simpan</button>
 	</form>
 
 </div>

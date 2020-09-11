@@ -38,7 +38,7 @@
 					<input type="number" name="harga" placeholder="Harga Menu" class="form-control" value="<?= $data['harga'] ?>" min="0" required>
 				</div>
 				<input type="hidden" name="id" value="<?= $data['id'] ?>">
-				<button type="submit" class="btn btn-primary float-right">Simpan</button>
+				<button type="submit" class="btn btn-primary float-right"><i class="fas fa-save"></i> Simpan</button>
 				<div class="clearfix"></div>
 			</form>
 		</div>

@@ -28,5 +28,5 @@
 			<?php endforeach ?>
 		</tbody>
 	</table>
-	<button class="nav-link btn btn-primary btn-sm text-white" onclick="window.print()" id='print'>Cetak Laporan</button>
+	<button class="nav-link btn btn-primary btn-sm text-white" onclick="window.print()" id='print'><i class="fas fa-print    "></i> Cetak</button>
 </div>
