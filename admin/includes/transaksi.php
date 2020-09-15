@@ -2,6 +2,15 @@
 	
 	<h2>Laporan Penjualan</h2>
 	<hr>
+	<!-- Filter Cabang -->
+	<div class="dropdown">
+    	<button type="button" class="btn btn-success dropdown-toggle btn-sm float-left" data-toggle="dropdown">Cabang</button>
+    	<div class="dropdown-menu">
+			<?php foreach ($data_kasir as $kasir): ?>
+			<a class="dropdown-item" href="?id=<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></a>
+			<?php endforeach ?>
+    	</div>
+  	</div>
 	<a href="index.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
 	<div class="clearfix"></div>
 	<hr>

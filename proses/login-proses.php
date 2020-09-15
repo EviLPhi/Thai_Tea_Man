@@ -3,8 +3,8 @@
 session_start();
 require_once '../config/db.php';
 
-$nama 		= $_POST['nama'];
-$password	= md5($_POST['password']);
+$nama 		= mysqli_real_escape_string($conn,$_POST['nama']);
+$password	= mysqli_real_escape_string($conn,md5($_POST['password']));
 
 if (empty($nama) || empty($password)) {
 	header('Location: ../index.php');
