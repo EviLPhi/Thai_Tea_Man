@@ -7,7 +7,7 @@
 	<div class="clearfix"></div>
 	
 	<?php 
-		$sql = $conn->query("SELECT * FROM tb_barang WHERE id = '".$_GET['id']."'");
+		$sql = $conn->query("SELECT * FROM tb_barang b JOIN tb_stock s ON b.id = s.id_barang WHERE b.id = '".$_GET['id']."' AND s.id_user='".$_SESSION['id_user']."'");
 		$data = $sql->fetch_assoc();
 	?>
 
@@ -23,7 +23,7 @@
 				</div>
 				<div class="form-group">
 					<label for="stok_barang">Stok Menu</label>
-					<input type="number" name="stok_barang" value="<?= $data['stok_barang'] ?>" min="1" max="10000" class="form-control" required readonly>	
+					<input type="number" name="stok_barang" value="<?= $data['stock'] ?>" min="1" max="10000" class="form-control" required readonly>	
 				</div>
 				<div class="form-group">
 						<input placeholder='tambah stock' type="number" name="tambah_stock" min="1" max="10000" class="form-control" required>

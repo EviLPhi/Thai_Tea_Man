@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col">
 	<?php foreach ($data_barang as $barang): ?>
-		<?php if ($barang['stok_barang'] < 5): ?>
+		<?php if ($barang['stock'] < 5): ?>
 			<div class="alert alert-danger" role="alert">
 			  <strong>Perhatian!!</strong> Stok <strong><?= $barang['nama_barang'] ?></strong> kurang dari 5.
 			</div>
@@ -82,7 +82,7 @@
 						$jumlah_barang 	= $_POST['jumlah_barang'];
 						$id_user 		= $_SESSION['id_user'];
 
-						$barang 		= $conn->query("SELECT * FROM tb_barang WHERE nama_barang='".$nama_barang."'");
+						$barang 		= $conn->query("SELECT * FROM tb_barang b JOIN tb_stock s ON b.id = s.id_barang WHERE s.id_user='".$_SESSION['id_user']."'");
 						$data_barang 	= $barang->fetch_assoc();
 
 
@@ -100,7 +100,7 @@
 								}
 							}
 						
-						$stock = $data_barang['stok_barang'] - $min_stock;
+						$stock = $data_barang['stock'] - $min_stock;
 						if ($jumlah_barang <= $stock){
 							$push = True;
 							$flag = 0;

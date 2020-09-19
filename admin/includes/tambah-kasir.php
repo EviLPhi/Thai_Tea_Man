@@ -9,7 +9,7 @@
 	<form action="proses/tambah_kasir.php" method="POST" class="mt-3" autocomplete="off">
 		<div class="form-group">
 			<label for="nama">Nama</label>
-			<input type="text" name="nama" placeholder="Nama Kasir" class="form-control" autofocus required>
+			<input type="text" name="nama" placeholder="Nama Cabang" class="form-control" autofocus required>
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>

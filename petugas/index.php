@@ -9,8 +9,10 @@ if ($_SESSION['jabatan'] == 'admin') {
 	header('Location: ../admin/index.php');
 }
 
+$id = $_SESSION['id_user'];
+
 // Mengelurkan seluruh data barang yang ada di Databae
-$sql 			= "SELECT * FROM tb_barang";
+$sql 			= "SELECT * FROM tb_barang b JOIN tb_stock s ON b.id=s.id_barang WHERE s.id_user='$id'";
 $query 			= $conn->query($sql);
 $data_barang 	= $query->fetch_all(MYSQLI_ASSOC);
 

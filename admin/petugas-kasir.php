@@ -2,6 +2,14 @@
 session_start();
 require_once '../config/db.php';
 
+if(isset($_GET['pesand'])){
+	if($_GET['pesand'] == "gagal"){
+		echo '<script language="javascript">alert("Hapus Gagal")</script>';
+	}else if($_GET['pesand'] == "berhasil"){
+		echo '<script language="javascript">alert("Hapus Berhasil")</script>';
+	}
+}
+
 if (!isset($_SESSION['user'])) {
 	header('Location: ../index.php?pesan=belum_login');
 }
@@ -28,12 +36,11 @@ if (!isset($_GET['h'])) {
 } else if ($_GET['h'] == 'edit-kasir') {
 	require_once 'includes/'.$_GET['h'].'.php';	
 } else if ($_GET['h'] == 'hapus-kasir') {
-	
-	$hapus = $conn->query("DELETE FROM tb_users WHERE id='".$_GET['id']."'");
+	$hapus = $conn->query("DELETE FROM tb_users, tb_stock USING tb_users JOIN tb_stock ON tb_users.id=tb_stock.id_user WHERE tb_users.id='".$_GET['id']."' AND tb_stock.id_user='".$_GET['id']."'");
 	if ($hapus) {
-		header('Location: petugas-kasir.php');
+		header('Location: petugas-kasir.php?pesand=berhasil');
 	} else {
-		header('Location: petugas-kasir.php');
+		header('Location: petugas-kasir.php?pesand=gagal');
 	}
 
 }

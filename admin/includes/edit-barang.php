@@ -7,7 +7,7 @@
 	<div class="clearfix"></div>
 	
 	<?php 
-		$sql = $conn->query("SELECT * FROM tb_barang WHERE id = '".$_GET['id']."'");
+		$sql = $conn->query("SELECT * FROM tb_barang b JOIN tb_stock s ON b.id= s.id_barang WHERE b.id = '".$_GET['id']."' AND s.id_user = $id_kasir");
 		$data = $sql->fetch_assoc();
 	?>
 
@@ -23,7 +23,7 @@
 				</div>
 				<div class="form-group">
 					<label for="stok_barang">Stok Menu</label>
-					<input type="number" name="stok_barang" value="<?= $data['stok_barang'] ?>" min="1" max="10000" class="form-control" required>
+					<input type="number" name="stok_barang" value="<?= $data['stock'] ?>" min="1" max="10000" class="form-control" required>
 				</div>
 				<div class="form-group">
 				<label for="jenis_barang">Jenis Menu</label>
@@ -31,6 +31,7 @@
 					<option value="">-- Pilih Jenis Menu --</option>
 					<option value="makanan">Makanan</option>
 					<option value="minuman">Minuman</option>
+					<option value="topping">Topping</option>
 				</select>
 				</div>
 				<div class="form-group">
@@ -38,6 +39,7 @@
 					<input type="number" name="harga" placeholder="Harga Menu" class="form-control" value="<?= $data['harga'] ?>" min="0" required>
 				</div>
 				<input type="hidden" name="id" value="<?= $data['id'] ?>">
+				<input type="hidden" name="id_kasir" value="<?= $id_kasir ?>">
 				<button type="submit" class="btn btn-primary float-right"><i class="fas fa-save"></i> Simpan</button>
 				<div class="clearfix"></div>
 			</form>

@@ -12,15 +12,12 @@
 			<input type="text" name="nama_barang" placeholder="Nama Menu" class="form-control" autofocus required>
 		</div>
 		<div class="form-group">
-			<label for="stok_barang">Stok Menu</label>
-			<input type="number" name="stok_barang" placeholder="Nama Menu" min="1" max="1000" class="form-control" required>
-		</div>
-		<div class="form-group">
 			<label for="jenis_barang">Jenis Menu</label>
 			<select name="jenis_barang" class="form-control" required>
 				<option value="">-- Pilih Jenis Menu --</option>
 				<option value="makanan">Makanan</option>
 				<option value="minuman">Minuman</option>
+				<option value="topping">Topping</option>
 			</select>
 		</div>
 		<div class="form-group">

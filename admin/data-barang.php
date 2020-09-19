@@ -2,6 +2,15 @@
 session_start();
 require_once '../config/db.php';
 
+
+if(isset($_GET['pesand'])){
+	if($_GET['pesand'] == "gagal"){
+		echo '<script language="javascript">alert("Hapus Gagal")</script>';
+	}else if($_GET['pesand'] == "logout"){
+		echo '<script language="javascript">alert("Hapus Berhasil")</script>';
+	}
+}
+
 if (!isset($_SESSION['user'])) {
 	header('Location: ../index.php?pesan=belum_login');
 }
@@ -9,44 +18,28 @@ if ($_SESSION['jabatan'] == 'kasir') {
 	header('Location: ../petugas/index.php');
 }
 
-if (isset($_SESSION['list_pembelian'], $_SESSION['total_bayar'])) {
-	foreach ($_SESSION['list_pembelian'] as $beli) {
-		$barang 		= $conn->query("SELECT * FROM tb_barang WHERE nama_barang='".$beli['nama_barang']."'");
-		$data_barang 	= $barang->fetch_assoc();
+$tb_kasir 			= $conn->query("SELECT id, nama FROM tb_users WHERE jabatan = 'kasir'");
+$data_kasir 		= $tb_kasir->fetch_all(MYSQLI_ASSOC);
 
-		$dt_tr = $conn->query("SELECT * FROM tb_transaksi WHERE id_barang = '".$data_barang['id']."' AND id_user = '".$_SESSION['id_user']."'");
-		$dt_arr 	= $dt_tr->fetch_assoc();
-		
-		$jumlah_stok = ($data_barang['stok_barang'] - $beli['jumlah']);
-
-		if ($dt_tr->num_rows > 0) {
-			
-			$jml_brg_tr  = ($dt_arr['jumlah_barang'] + $beli['jumlah']);
-
-			$update = $conn->query("UPDATE tb_transaksi SET jumlah_barang = '".$jml_brg_tr."' WHERE id = '".$dt_arr['id']."'");
-			
-			$update_data_barang = $conn->query("UPDATE tb_barang SET stok_barang = '".$jumlah_stok."' WHERE id = '".$data_barang['id']."'");
-
-		} else {
-
-			$transaksi 		= $conn->query("INSERT INTO `tb_transaksi`(`id`, `id_barang`, `id_user`, `jumlah_barang`) VALUES ('','".$data_barang['id']."','".$_SESSION['id_user']."','".$beli['jumlah']."')");
-
-			$update_data_barang = $conn->query("UPDATE tb_barang SET stok_barang = '".$jumlah_stok."' WHERE id = '".$data_barang['id']."'");
-
-		}
-
-
-	}
-	unset($_SESSION['list_pembelian'], $_SESSION['total_bayar']);
+if(isset($_GET['id_kasir'])){
+	$id_kasir = $_GET['id_kasir'];
+	$nama_kasir = $data_kasir[searchForId($id_kasir,$data_kasir,'id')]['nama'];
+	$where = "WHERE s.id_user = $id_kasir";
+}
+else{
+	$id_kasir = $data_kasir[0]['id'];
+	$nama_kasir = $data_kasir[0]['nama'];
+	$where = "WHERE s.id_user = $id_kasir";
 }
 
 // Mengelurkan seluruh data barang yang ada di Databae
-$sql 			= "SELECT * FROM tb_barang";
+$sql 			= "SELECT * FROM tb_barang b JOIN tb_stock s ON b.id=s.id_barang ".$where;
 $query 			= $conn->query($sql);
 $data_barang 	= $query->fetch_all(MYSQLI_ASSOC);
 
 // Nomor untuk increment baris tabel
 $no = 1;
+
 require_once 'includes/header.php';
 if (!isset($_GET['h'])) {
 	require_once 'includes/barang.php';	
@@ -58,12 +51,21 @@ if (!isset($_GET['h'])) {
 	require_once 'includes/'.$_GET['h'].'.php';	
 } else if ($_GET['h'] == 'hapus') {
 	
-	$hapus = $conn->query("DELETE FROM tb_barang WHERE id='".$_GET['id']."'");
+	$hapus = $conn->query("DELETE FROM tb_barang , tb_stock USING tb_barang JOIN tb_stock ON tb_barang.id=tb_stock.id_barang WHERE tb_barang.id='".$_GET['id']."' AND tb_stock.id_barang='".$_GET['id']."'");
 	if ($hapus) {
-		header('Location: data-barang.php');
+		header('Location: data-barang.php?pesand=berhasil&id_kasir='.$id_kasir);
 	} else {
-		header('Location: data-barang.php');
+		header('Location: data-barang.php?pesand=gagal&id_kasir='.$id_kasir);
 	}
 
 }
 require_once 'includes/footer.php';
+
+function searchForId($id, $array, $text) {
+	foreach ($array as $key => $val) {
+		if ($val[$text] === $id) {
+			return $key;
+		}
+	}
+	return null;
+ }

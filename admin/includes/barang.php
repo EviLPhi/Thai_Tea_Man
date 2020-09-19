@@ -6,6 +6,16 @@
 	<a href="?h=tambah" class="btn btn-success btn-sm float-left">Tambah Menu</a>
 	<div class="clearfix"></div>
 	<hr>
+	<!-- Filter Cabang -->
+	<div class="dropdown">
+    	<button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown">Filter</button>
+    	<div class="dropdown-menu">
+			<?php foreach ($data_kasir as $kasir): ?>
+			<a class="dropdown-item" href="?id_kasir=<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></a>
+			<?php endforeach ?>
+    	</div>
+  	</div>
+	<h2><?= $nama_kasir ?></h2>
 	<table class="table table-bordered" id="myTable">
 	<thead class="thead-light" class="align-middle">
 		<thead>
@@ -23,7 +33,7 @@
 			<tr>
 				<td><?= $no++ ?></td>
 				<td><?= $barang['nama_barang'] ?></td>
-				<td><?= $barang['stok_barang'] ?></td>
+				<td><?= $barang['stock'] ?></td>
 				<td><?= $barang['jenis_barang'] ?></td>
 				<td><?= $barang['harga'] ?></td>
 				<td>

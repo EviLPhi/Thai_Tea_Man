@@ -6,8 +6,9 @@
 	<div class="dropdown">
     	<button type="button" class="btn btn-success dropdown-toggle btn-sm float-left" data-toggle="dropdown">Cabang</button>
     	<div class="dropdown-menu">
+		<a class="dropdown-item" href="?">All</a>
 			<?php foreach ($data_kasir as $kasir): ?>
-			<a class="dropdown-item" href="?id=<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></a>
+			<a class="dropdown-item" href="?id_kasir=<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></a>
 			<?php endforeach ?>
     	</div>
   	</div>

@@ -28,7 +28,7 @@ if (!isset($_GET['h'])) {
 	require_once 'includes/'.$_GET['h'].'.php';	
 } else if ($_GET['h'] == 'hapus') {
 	
-	$hapus = $conn->query("DELETE FROM tb_barang WHERE id='".$_GET['id']."'");
+	$hapus = $conn->query("DELETE FROM tb_barang b, tb_stock s WHERE s.id_barang='".$_GET['id']."' b.id='".$_GET['id']."'");
 	if ($hapus) {
 		header('Location: barang-barang.php');
 	} else {
