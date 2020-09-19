@@ -4,7 +4,7 @@
 	<hr>
 	<!-- Filter Cabang -->
 	<div class="dropdown">
-    	<button type="button" class="btn btn-success dropdown-toggle btn-sm float-left" data-toggle="dropdown">Cabang</button>
+    	<button type="button" class="btn btn-success dropdown-toggle btn-sm float-left" data-toggle="dropdown"><?= $nama_kasir ?></button>
     	<div class="dropdown-menu">
 		<a class="dropdown-item" href="?">All</a>
 			<?php foreach ($data_kasir as $kasir): ?>
