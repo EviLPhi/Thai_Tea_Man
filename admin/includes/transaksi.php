@@ -19,11 +19,11 @@
 	<thead class="thead-light" class="align-middle">
 		<thead>
 			<tr>
-				<th>Tanggal</th>
+				<th>Tanggal Transaksi</th>
 				<th>Pimpinan Cabang</th>
 				<th>Menu</th>
-				<th>Jumlah Menu</th>
-				<th>Total</th>
+				<th>Jumlah</th>
+				<th>Total Harga</th>
 			</tr>
 		</thead>
 		<tbody>
