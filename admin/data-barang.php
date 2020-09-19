@@ -6,7 +6,7 @@ require_once '../config/db.php';
 if(isset($_GET['pesand'])){
 	if($_GET['pesand'] == "gagal"){
 		echo '<script language="javascript">alert("Hapus Gagal")</script>';
-	}else if($_GET['pesand'] == "logout"){
+	}else if($_GET['pesand'] == "berhasil"){
 		echo '<script language="javascript">alert("Hapus Berhasil")</script>';
 	}
 }
