@@ -3,15 +3,16 @@
 	<h2>Laporan Penjualan</h2>
 	<hr>
 	<!-- Filter Cabang -->
+	<input class="form-control col-4 float-left" type="month" value="2020-09" id="month-input">
 	<div class="dropdown">
-    	<button type="button" class="btn btn-success dropdown-toggle btn-sm float-left" data-toggle="dropdown"><?= $nama_kasir ?></button>
+    	<button type="button" class="btn btn-success dropdown-toggle btn-md float-left" data-toggle="dropdown"><?= $nama_kasir ?></button>
     	<div class="dropdown-menu">
 		<a class="dropdown-item" href="?">All</a>
 			<?php foreach ($data_kasir as $kasir): ?>
 			<a class="dropdown-item" href="?id_kasir=<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></a>
 			<?php endforeach ?>
     	</div>
-  	</div>
+	  </div>
 	<a href="index.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
 	<div class="clearfix"></div>
 	<hr>
