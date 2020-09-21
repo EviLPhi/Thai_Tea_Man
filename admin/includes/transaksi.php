@@ -1,18 +1,17 @@
 <div class="container mt-3">
-	
 	<h2>Laporan Penjualan</h2>
 	<hr>
 	<!-- Filter Cabang -->
-	<input class="form-control col-4 float-left" type="month" value="2020-09" id="month-input">
-	<div class="dropdown">
-    	<button type="button" class="btn btn-success dropdown-toggle btn-md float-left" data-toggle="dropdown"><?= $nama_kasir ?></button>
-    	<div class="dropdown-menu">
-		<a class="dropdown-item" href="?">All</a>
-			<?php foreach ($data_kasir as $kasir): ?>
-			<a class="dropdown-item" href="?id_kasir=<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></a>
-			<?php endforeach ?>
-    	</div>
-	  </div>
+	<form action="./transaksi.php" method="post">
+		<input class="form-control col-3 float-left" type="month" value="<?= $sysdate ?>" name="date">
+		<select name="id_kasir" class="form-control col-2 float-left" value="<?= $data['jenis_barang'] ?>">
+				<option value="0">All</option>
+				<?php foreach ($data_kasir as $kasir): ?>
+				<option value="<?= $kasir['id'] ?>"><?= $kasir['nama'] ?></option>
+				<?php endforeach ?>
+			</select>
+		<button type="submit" class="btn btn-success float-left">Filter</button>
+	</form>
 	<a href="index.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
 	<div class="clearfix"></div>
 	<hr>
