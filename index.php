@@ -83,8 +83,6 @@
 		</div>
 	
 </body> -->
-
-Toggle Untuk Pasword -> Text
 <script>
 $('.toggle-password').on('click', function() {
   $(this).toggleClass('fa-eye fa-eye-slash');
