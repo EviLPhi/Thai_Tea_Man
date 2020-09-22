@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Aplikasi Thai Tea Man </title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,8 +47,9 @@
 
     <!-- Login Form -->
     <form action="proses/login-proses.php" method="POST" autocomplete="off">
-      <input type="text" id="login" class="fadeIn second" name="nama" placeholder="Username" autofocus>
-	  <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+	  <input type="text" id="login" class="fadeIn second" name="nama" placeholder="Username" autofocus required>
+	  <input type="password" id="password" class="fadeIn third validate" name="password" placeholder="password" required>	
+	  <span toggle="#password" class="fadeIn third fa fa-fw fa-eye field-icon toggle-password"></span>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
@@ -61,7 +63,6 @@
 </body>
 
 <!-- <body class="login">
-
 	<div class="card w-50 mx-auto mt-5"><a href="utama.php"></a>
 	
 		<h5 class="card-header">Login</h5>
@@ -83,4 +84,17 @@
 	
 </body> -->
 
+Toggle Untuk Pasword -> Text
+<script>
+$('.toggle-password').on('click', function() {
+  $(this).toggleClass('fa-eye fa-eye-slash');
+  let input = $($(this).attr('toggle'));
+  if (input.attr('type') == 'password') {
+    input.attr('type', 'text');
+  }
+  else {
+    input.attr('type', 'password');
+  }
+});
+</script>
 </html>
