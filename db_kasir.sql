@@ -161,9 +161,9 @@ CREATE TABLE `tb_users` (
 
 INSERT INTO `tb_users` (`id`, `nama`, `password`, `jabatan`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(2, 'cabangsewon', '490b4c1667a107c53920e739c48b6414', 'kasir'),
-(3, 'cabangimogiri', 'be037e9c3f7d2783c166c81e00e71563', 'kasir'),
-(4, 'cabangmalioboro', '6f161cd9f690ca5b65cb7475699de946', 'kasir');
+(6, 'cabangsewon', '490b4c1667a107c53920e739c48b6414', 'kasir'),
+(7, 'cabangimogiri', 'be037e9c3f7d2783c166c81e00e71563', 'kasir'),
+(8, 'cabangmalioboro', '6f161cd9f690ca5b65cb7475699de946', 'kasir');
 
 --
 -- Indexes for dumped tables
