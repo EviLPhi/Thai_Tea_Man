@@ -81,6 +81,7 @@
 						$nama_barang 	= $_POST['nama_barang'];
 						$jumlah_barang 	= $_POST['jumlah_barang'];
 						$id_user 		= $_SESSION['id_user'];
+						
 						$barang 		= $conn->query("SELECT * FROM tb_barang b JOIN tb_stock s ON b.id = s.id_barang WHERE nama_barang = '".$nama_barang."' AND s.id_user='".$_SESSION['id_user']."'");
 						$data_barang 	= $barang->fetch_assoc();
 
