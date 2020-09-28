@@ -31,7 +31,7 @@ CREATE TABLE `tb_barang` (
   `id` int(11) NOT NULL,
   `nama_barang` varchar(255) NOT NULL,
   `jenis_barang` varchar(255) NOT NULL,
-  `harga` int(100) NOT NULL
+  `harga` int(15) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `tb_transaksi` (
   `id_barang` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `jumlah_barang` int(11) NOT NULL,
-  `harga_barang` int(100) NOT NULL,
+  `harga_barang` int(15) NOT NULL,
   `tanggal_transaksi` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
