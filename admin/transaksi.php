@@ -25,14 +25,14 @@ else{
 	$nama_kasir = "All";
 	$where=" WHERE DATE_FORMAT(tb_transaksi.tanggal_transaksi, '%Y-%m') = '$sysdate'";
 }
-$tb_transaksi 		= $conn->query("SELECT tb_transaksi.*, tb_barang.*, tb_users.nama, (tb_barang.harga * tb_transaksi.jumlah_barang) AS Total FROM tb_transaksi INNER JOIN tb_barang ON tb_transaksi.id_barang = tb_barang.id INNER JOIN tb_users ON tb_transaksi.id_user = tb_users.id".$where);
+$tb_transaksi 		= $conn->query("SELECT tb_transaksi.*, tb_barang.nama_barang, tb_users.nama, (tb_transaksi.harga_barang * tb_transaksi.jumlah_barang) AS total FROM tb_transaksi INNER JOIN tb_barang ON tb_transaksi.id_barang = tb_barang.id INNER JOIN tb_users ON tb_transaksi.id_user = tb_users.id ".$where." ORDER BY tb_transaksi.tanggal_transaksi");
 $data_tb_transaksi 	= $tb_transaksi->fetch_all(MYSQLI_ASSOC);
 
 $no = 1;
 
 $total = [];
 for ($i=0; $i < $tb_transaksi->num_rows; $i++) { 
-	array_push($total, $data_tb_transaksi[$i]['Total']);
+	array_push($total, $data_tb_transaksi[$i]['total']);
 }
 $total_transaksi = array_sum($total);
 

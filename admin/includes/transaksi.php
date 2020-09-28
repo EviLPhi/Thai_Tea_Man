@@ -38,7 +38,7 @@
 				<td><?= $data['nama'] ?></td>
 				<td><?= $data['nama_barang'] ?></td>
 				<td><?= $data['jumlah_barang'] ?></td>
-				<td><?= $data['jumlah_barang']*$data['harga'] ?></td>
+				<td><?= $data['total'] ?></td>
 			</tr>
 			<?php endforeach ?>
 			<tr>

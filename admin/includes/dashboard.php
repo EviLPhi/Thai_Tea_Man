@@ -55,7 +55,7 @@
 				<h5 class="card-title"><b>GRAFIK PENDAPATAN</b></h5><hr>
 				<?php
 					$kasir = $conn->query("SELECT nama,id FROM tb_users WHERE id!=1")->fetch_all(MYSQLI_ASSOC);
-					$harga = "SELECT SUM(tb_barang.harga * tb_transaksi.jumlah_barang) AS Total FROM `tb_transaksi` INNER JOIN `tb_barang` ON tb_transaksi.id_barang = tb_barang.id INNER JOIN tb_users ON tb_transaksi.id_user = tb_users.id";
+					$harga = "SELECT SUM(tb_transaksi.harga_barang * tb_transaksi.jumlah_barang) AS Total FROM `tb_transaksi` INNER JOIN tb_users ON tb_transaksi.id_user = tb_users.id";
 					$dataPoints = [];
 					for ($i=0; $i < $barang['TotalKasir'] ; $i++) { 
 						$pendapatan = $conn->query($harga." WHERE tb_users.id=".$kasir[$i]['id'])->fetch_assoc();

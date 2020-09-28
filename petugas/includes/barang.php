@@ -6,6 +6,8 @@
 	<!-- <a href="?h=tambah" class="btn btn-primary btn-sm float-right">Tambah Menu</a> -->
 	<div class="clearfix"></div>
 	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari..." title="Type in a name">
+	<a href="index.php" class="btn btn-primary btn-sm float-right">&larr; Kembali</a>
+	<hr>
 	<table class="table table-bordered" id="myTable">
 	<thead class="thead-light" class="align-middle">
 			<tr>

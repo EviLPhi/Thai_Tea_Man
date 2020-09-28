@@ -85,7 +85,7 @@
 						$barang 		= $conn->query("SELECT * FROM tb_barang b JOIN tb_stock s ON b.id = s.id_barang WHERE nama_barang = '".$nama_barang."' AND s.id_user='".$_SESSION['id_user']."'");
 						$data_barang 	= $barang->fetch_assoc();
 
-
+						$stock = $data_barang['stock'];
 						if (!isset($_SESSION['list_pembelian'])) {
 							$_SESSION['list_pembelian']	= [];
 						}
@@ -100,7 +100,7 @@
 								}
 							}
 						
-						$stock = $data_barang['stock'] - $min_stock;
+						$stock =  $stock - $min_stock;
 						if ($jumlah_barang <= $stock){
 							$push = True;
 							$flag = 0;
@@ -131,7 +131,15 @@
 							// 		'jumlah' => $jumlah_barang, 
 							// 		'harga' => $data_barang['harga']]);
 							// 	}
-							}
+						} else {
+							echo "<div class='alert alert-warning alert-dismissible'>";
+							echo "<a class='close' data-dismiss='alert' aria-label='close'>&times;</a>";
+							echo "<strong> Perhatian! </strong> Stok <strong>";
+							echo $nama_barang;
+							echo "</strong> ";
+							echo $stock;
+							echo "</div>";
+						}
 
 						if (!isset($_SESSION['total_bayar'])) {
 							$_SESSION['total_bayar'] = [];
@@ -150,7 +158,7 @@
 					<h3 class="float-right">Total : Rp. <?= number_format(array_sum($_SESSION['total_bayar'])) ?></h3>
 					<div class="clearfix"></div>
 					
-					<a href="data-barang.php" class="btn btn-success btn-block">Submit</a>
+					<a href="proses/transaksi.php" class="btn btn-success btn-block">Submit</a>
 					
 				   
 					

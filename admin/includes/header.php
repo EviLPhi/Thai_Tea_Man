@@ -19,7 +19,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand">
+		<a class="navbar-brand" href="index.php">
 		<img src="..\assets\img\logo.png" width="80" height="60" alt="Thaitea">
 		Thai Tea Man
 		</a>
